@@ -1,0 +1,60 @@
+<main>
+  <mat-toolbar style="background-color: orange !important; position: fixed; z-index: 20;" class="mat-elevation-z2">
+    <a href="https://facebook.com" mat-icon-button class="text-white" aria-label="Example icon-button with share icon" title="{{'' | translate }}">
+      <i class="mdi mdi-facebook" style="font-size: 24px;"></i>
+    </a>
+    <a href="https://twitter.com" mat-icon-button class="text-white" aria-label="Example icon-button with share icon" title="{{'' | translate }}">
+      <i class="mdi mdi-twitter" style="font-size: 24px;"></i>
+    </a>
+    <a href="https://instagram.com" mat-icon-button class="text-white" aria-label="Example icon-button with share icon" title="{{'' | translate }}">
+      <i class="mdi mdi-instagram" style="font-size: 24px;"></i>
+    </a>
+    <span class="e-spacer"></span>
+    <a href="/login" aria-label="Example icon-button with share icon" [translate]="'home.toolbar.login'" style="margin-right: 28px; font-size: 14px; text-decoration: none; color: rgb(255, 255, 255)"></a>
+    <button [matMenuTriggerFor]="langMenu" mat-icon-button class="text-white text-uppercased"  aria-label="Example icon-button with heart icon">
+      <span>{{currentLang}}</span>
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu xPosition="before" yPosition="above" #langMenu="matMenu">
+      <button mat-menu-item (click)="switchLanguage('fr')">
+        <span [translate]="'home.toolbar.french'"></span>
+      </button>
+      <button mat-menu-item (click)="switchLanguage('en')">
+        <span [translate]="'home.toolbar.english'"></span>
+      </button>
+    </mat-menu>
+  </mat-toolbar>
+  <section id="home">
+    <div class="e-home-content">
+      <ul class="e-menu">
+        <li class="active"><a href="#home" [translate]="'home.menu.home'"></a></li>
+        <li><a href="#about-us" [translate]="'home.menu.about'"></a></li>
+        <li><a href="#services" [translate]="'home.menu.services'">Services</a></li>
+        <li><a href="#contact"  [translate]="'home.menu.contact'">Contact</a></li>
+      </ul>
+    </div>
+  </section>
+  <section>
+    <div style="display: grid; grid-template-columns: 2fr 1fr; grid-gap: 20px;">
+      <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci, amet asperiores ea, eius ex id in magni officiis perferendis provident quae quam quas rem reprehenderit sunt tempora velit, vero. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam excepturi illum voluptas! Aliquid amet aperiam autem beatae corporis ea et, fuga iusto laborum nam quo, repellendus suscipit veniam veritatis voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dicta ratione soluta voluptatem voluptatum! Ab blanditiis debitis eaque, est eveniet exercitationem fugiat id, iste minus, nesciunt nulla odio ut velit?</p>
+      <div style="background-image: url(/assets/bg.jpg); background-size: cover;"></div>
+    </div>
+  </section>
+  <section id="services" class="justify-content-center d-flex-col">
+      <h2 class="e-section-title" [translate]="'home.sections.services.title'"></h2>
+    <div class="d-block w-100"></div>
+      <div class="e-services-list w-100" style="justify-content: space-between;">
+        <div class="e-service-item">Service 1</div>
+        <div class="e-service-item">Service 2</div>
+        <div class="e-service-item">Service 3</div>
+      </div>
+  </section>
+  <div class="e-home-orange-band"></div>
+  <section style="display: grid; grid-template-columns: repeat(3, 1fr); justify-content: space-between">
+    <p style="text-align: justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, aliquam architecto commodi, dicta dolores dolorum earum eveniet fugiat itaque laborum maxime necessitatibus optio pariatur perferendis quis sint vel voluptate! Adipisci. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <span></span>
+    <p style="text-align: justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, aliquam architecto commodi, dicta dolores dolorum earum eveniet fugiat itaque laborum maxime necessitatibus optio pariatur perferendis quis sint vel voluptate! Adipisci. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  </section>
+  <div class="e-home-gray-band"></div>
+  <div class="e-copyright" [translate]="'home.copyright'"></div>
+</main>

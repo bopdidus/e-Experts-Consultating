@@ -1,0 +1,40 @@
+<div class="row mt-5">
+    <div class="col-12">
+      <h1 class="text-italic mb-5" [translate]="'subscriber.my_consultations.title'"></h1>
+    </div>
+    <div class="col-12">
+      <label class="font-weight-bold mr-3" [translate]="'subscriber.my_consultations.filter'"> : </label>
+      <div class="d-inline-block mr-1">
+        <div class="form-inline">
+          <span [translate]="'subscriber.my_consultations.from'"></span>
+          <select class="form-control border-0">
+            <option *ngFor="let y of availableYears" value="{{y}}">{{y}}</option>
+          </select>
+        </div>
+      </div>
+      &nbsp;
+      <div class="d-inline-block">
+        <div class="form-inline">
+          <span [translate]="'subscriber.my_consultations.to'"></span>
+          <select class="form-control border-0">
+            <option *ngFor="let y of availableYears" value="{{y}}">{{y}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-12">
+      <div class="d-grid" style="grid-template-columns: 80px 1fr;">
+        <div class="d-flex-col">
+          <span class="grid-item date-filter-item grid-item-hover" (click)="(selectedMonth = idx + 1) && refresh()" [ngClass]="{'last': isLast, 'active': (idx + 1) === selectedMonth}" *ngFor="let m of months; last as isLast; first as isFirst; index as idx" [translate]="m"></span>
+        </div>
+        <div class="d-flex-col">
+          <div class="grid-item grid-data" [ngClass]="{'last': isLast}" *ngFor="let m of data; last as isLast">
+            <span [translate]="m"></span>
+            <span class="grid-data-date">01-01-2021</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

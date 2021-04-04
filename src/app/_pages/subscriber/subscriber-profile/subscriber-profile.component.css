@@ -1,0 +1,30 @@
+.e-avatar {
+  height: 175px;
+  width: 175px;
+  border: 1px solid gainsboro;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/assets/images/profile_avatar.jpg")
+}
+
+.e-form label{
+  font-size: .9em;
+}
+.form-control.e-form-control {
+  padding: 2px !important;
+  font-size: 10px;
+}
+
+.btn-picker {
+  max-width: 150px;
+  min-width: 150px;
+}
+
+.e-read-input {
+  border: 1px transparent !important;
+  background: transparent !important;
+}
+
+
+

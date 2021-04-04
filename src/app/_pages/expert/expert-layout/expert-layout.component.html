@@ -1,0 +1,41 @@
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened>
+        <div class="sidebar-image"></div>
+        <mat-nav-list>
+            <a mat-list-item routerLink="dashboard">
+              <mat-icon class="text-white">home</mat-icon>
+              <span class="nav-caption text-white" [translate]="'expert.layout.menu.dashbord'"></span>
+            </a>
+            <a mat-list-item routerLink="#">
+              <mat-icon class="text-white">comment_bank</mat-icon>
+              <span class="nav-caption text-white" [translate]="'expert.layout.menu.experiences'"></span>
+            </a>
+            <a mat-list-item routerLink="my-consultations">
+              <mat-icon class="text-white">assignment_turned_in</mat-icon>
+              <span class="nav-caption text-white" [translate]="'expert.layout.menu.consultations'"></span>
+            </a>
+            <a mat-list-item routerLink="profile">
+                <mat-icon class="text-white">contact_page </mat-icon>
+                <span class="nav-caption text-white" [translate]="'expert.layout.menu.params.profile'"></span>
+              </a>
+          </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+      <p>
+        <mat-toolbar>
+          <span *ngIf="user.type == userRoles.EXPERT">{{user.firstName + ' ' + user.lastName}}</span>
+          <span *ngIf="user.type == userRoles.COMPANY_EXPERT">{{user.company_name}}</span>
+          <span class="example-spacer"></span>
+          <button mat-icon-button class="example-icon favorite-icon" class="text-white" aria-label="Example icon-button with heart icon" matBadge="10" matBadgeColor="primary" matBadgePosition="before" [matBadgeHidden]="hidden">
+            <mat-icon>message</mat-icon>
+          </button>
+          <a href="/logout" mat-icon-button class="text-white" aria-label="Example icon-button with share icon" title="{{'' | translate }}">
+            <mat-icon>exit_to_app</mat-icon>
+          </a>
+        </mat-toolbar>
+      </p>
+      <p class="container-fluid">
+          <router-outlet ></router-outlet>
+      </p>
+    </mat-drawer-content>
+  </mat-drawer-container>

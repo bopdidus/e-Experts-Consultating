@@ -1,0 +1,25 @@
+<div class="row mt-5">
+  <div class="col">
+      <table>
+          <tbody>
+            <tr>
+              <td *ngFor="let item of alphabet">
+                <a mat-stroked-button href="javascript:void(0);" (click)="filter(item)" #item>{{item}}</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <select>
+          <option *ngFor="let item of alphabet" value="{{item}}" (click)="filter(item)"> {{item}}</option>
+        </select>
+  </div>
+</div>
+<div class="row my-3">
+  <div class="col-md-3" *ngFor="let item of domains">
+      <mat-card class="mb-3">
+         <h2><a href="javascript:void(0);" (click)="onSelectDomaine(item.id)">{{item.name}}</a> </h2>
+      </mat-card>
+  </div>
+</div>
+
+

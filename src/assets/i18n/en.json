@@ -1,0 +1,185 @@
+{
+  "months": {
+  "january": "January",
+  "february": "February",
+  "march": "March",
+  "april": "April",
+  "may": "May",
+  "june": "June",
+  "july": "July",
+  "august": "August",
+  "september": "September",
+  "october": "October",
+  "november": "November",
+  "december": "Décember"
+},
+	"home": {
+    "menu": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "contact": "Contact"
+    },
+
+    "toolbar": {
+      "login": "Sign in",
+      "french": "French",
+      "english": "English"
+    },
+		
+    "copyright": "Copyright 2021. All rights e-Experts & Consultants",
+    "sections": {
+      "services": {
+        "title": "Our Services"
+      }
+    }
+	},
+	"login": {
+		"auth_profile": "Connection profile",
+		"authenticationFailed": "Incorrect email, card number or password",
+		"create_account": "Create an account",
+		"email": "E-mail",
+		"email_required": "Please enter your email address",
+		"forgotten_password": "Forgot your password",
+		"login": "Sign In",
+		"nic": "Identity card number",
+		"nic_required": "Please enter your card number",
+		"password": "Password",
+		"password_required": "Please enter your password",
+		"requiredFields": "Please fill in all fields",
+		"title": "Connexion"
+	},
+	"recover_password": {
+		"create_account": "Create an account",
+		"email": "E-mail",
+		"email_required": "Please enter your email address",
+		"invalid_email": "Invalid Address Format",
+		"login": "I already have an account",
+		"notice": "Your new password will be sent to your address, if verified.",
+		"return_login": "Return to login page",
+		"save": "Validate",
+		"success_message": "An email with connection instructions has been sent to your inbox.",
+		"title": "Password Recovery"
+	},
+	"register": {
+    "auth_profile": "Register profile ",
+		"accept_conditions": "Accept the conditions of use of the platform",
+		"accept_conditions_required": "Please accept the terms of use",
+		"company_activity": "Activity",
+		"company_activity_required": "Business activity required",
+		"company_name": "Company name",
+		"company_name_required": "Please enter the name of the company.",
+		"confirm_password": "Password Confirmation",
+		"confirm_password_required": "Password confirmation required",
+		"email": "E-mail",
+		"email_required": "Please enter your email address",
+		"experience_count": "Years of experience",
+		"experience_count_required": "Years of experience required.",
+		"firstname": "First name(s)",
+		"firstname_required": "Enter your first names",
+		"invalidExperiences": "Invalid experience value",
+		"lastname": "Last name(s)",
+		"lastname_required": "Enter your names",
+		"login": "I already have an account",
+		"next": "Next",
+		"nic": "Identity card number",
+		"nic_required": "Enter your identity card number",
+		"password": "Password",
+		"password_required": "Password required",
+		"passwords_missmatch": "Passwords are not the same",
+		"phone_number": "Phone number",
+		"phone_number_required": "Phone number required",
+		"previous": "Previous",
+		"requiredFields": "Please fill in all fields",
+		"save": "Save",
+		"section_account_infos_title": "Account info",
+		"section_company_information_title": "Company information",
+		"section_personal_contact_title": "Personal Contact",
+    "section_personal_information_title": "Personal informations",
+    "section_professional_information": "Professional information",
+		"send": "Send",
+		"title": "Registration",
+    "town": "City",
+    "male":"Male",
+    "female":"Female",
+    "town_required": "City required",
+    "country_required": "Country required",
+    "registre_commerce": "ID Trade Number",
+    "niu": "ID Taxpayer Card",
+    "Raison_sociale": "Social Reason",
+    "domaine_expertise": "Expertise Field",
+    "ordre_professionnel_national": "National Professional Order",
+    "ordre_professionnel_international": "International Professional Order",
+    "required_field": "Required field",
+    "section_expert_information": "Expert information",
+    "national_professional_order": "National Professional Order",
+    "international_professional_order": "International Professional Order",
+    "competence_territoriale": "Territorial competence",
+    "section_localisation_information": "Location Information",
+    "country": "Country",
+    "sexe": "Sex",
+    "sexe_required": "Sex is required"
+	},
+	"user_types": {
+	  "admin": "Administrator",
+		"company_subscriber": "Subscriber Company",
+		"company_expert": "Expert Company",
+		"expert": "Expert",
+		"subscriber": "Subscriber"
+	},
+  "expert": {
+    "layout": {
+      "dashboard": {
+        "title":"Dashboard",
+        "website": "Website",
+        "number_consultation":"Number of consultation done:",
+        "mark_consultation":"Prestation score:",
+        "message_received":"Received message:",
+        "message":" Nous vous remercions d’entré de jeux pour la confiance que vous nous faites pour mettre en avant votre / vos savoirs dans l’optique d’apporter des solutions aux préoccupations émises par nos abonnés et visant la résolution de leur(s) problème(s) ponctuel(s) et quotidien(s).Nous vous exhortons à faire preuve de professionnalisme et d’exercer uniquement dans le respect des lois nationales et internationales qui régissent vos professions respectives. Nous nous réservons le droit de vous désabonner de la plateforme en cas de plaintes récurrentes à votre sujet. Nous évaluerons la satisfaction des abonnés à la fin de chacune de vos prestations et vous serez notifié en cas de plainte."
+      } ,
+      "menu": {
+        "dashbord": "Dashboard",
+        "experiences": "My experiences",
+        "consultations": "My consultations",
+        "params": {
+          "title": "Settings",
+          "profile": "My Profile",
+          "logout": "Logout"
+        }
+      }
+    }
+  },
+  "subscriber": {
+    "layout": {
+      "menu": {
+        "dashbord": "Dashboard",
+        "experiences": "My experiences",
+        "consultations": "My consultations",
+        "params": {
+          "title": "Settings",
+          "profile": "My Profile",
+          "logout": "Logout"
+        }
+      }
+    },
+    "experts":{
+      "asc":"Ascending order",
+      "desc":"Descending order",
+      "search":"Search",
+      "exp":"experiences"
+    }
+  },
+  "buttons":{
+    "edit":"Edit",
+    "save": "Save",
+    "cancel":"Cancel",
+    "last_password_forgot":"I forgot the last password",
+    "change_password":" Change the password",
+    "delete":"Delete"
+  },
+  "labels":{
+    "last_password":"Enter the last password",
+    "new_password":"Enter the new password",
+    "confirmation_password":"confirm the new password"
+  }
+}

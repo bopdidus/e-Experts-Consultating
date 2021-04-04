@@ -1,0 +1,56 @@
+
+mat-drawer {
+  background-color: #ee850a;
+  width: 15%;
+}
+#content{
+width: 82%;
+  border:1px solid blue;
+
+}
+ mat-toolbar {
+  background-color: #ee850a;
+}
+mat-toolbar span{
+  color: white;
+}
+.e-sidebar-content{
+  position:static;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+a mat-icon{
+  margin-left: 2px;
+  margin-right: 5px;
+}
+mat-panel-title{
+  font-weight: bold;
+  font-size: 17 px
+}
+.sidebar-image{
+  width: 100%;
+  height: 200px;
+  background-image: url('/assets/images/profile_avatar.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+
+
+mat-nav-list>a, mat-accordion a{
+  padding: 5px;
+}
+
+@media only screen and (max-width: 600px){
+  mat-drawer mat-nav-list span{
+    display: none;
+  }
+
+}
+
+mat-drawer-container{
+  width: 100%;
+  height: 100vh;
+}

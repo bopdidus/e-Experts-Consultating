@@ -1,0 +1,297 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-form-field-outline-start, .mat-form-field-outline-end {
+  border-radius: 0 !important;
+}
+.mat-horizontal-stepper-header-container {
+  display: none !important;
+}
+
+.auth-form-title {
+  font-size: 3em !important;
+}
+
+.border-radius-0 {
+  border-radius: 0 !important;
+}
+
+.btn-orange {
+  background: orange !important;
+  color: white !important;
+  border: 1px solid orange !important;
+}
+
+.btn-green {
+  background: #33B88B;
+  color: white;
+  border: 1px solid #33B88B;
+}
+.btn-red {
+  background: crimson;
+  color: white;
+  border: 1px solid crimson;
+}
+
+.bg-orange {
+  background-color: orange;
+}
+
+.text-orange {
+  color: orange;
+}
+
+.mx-auto {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.w-50{
+  width: 50%;
+}
+
+.w-100{
+  width: 100%;
+}
+
+.h-100{
+  height: 100%;
+}
+
+.w-75 {
+  width: 75%;
+}
+
+.e-bg-warning {
+  background-color: #FBB791;
+}
+
+.e-btn-warning {
+  border-color: #FBB791;
+  background-color: #FBB791;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-theme {
+  color: #FBB791;
+}
+
+.col, .col-*{
+  display: flex;
+  flex-direction: row;
+  flex-grow: 12;
+  width: 100%;
+}
+
+.px-4, .pr-4 {
+  padding-right: 4px;
+}
+
+.px-4, .pl-4 {
+  padding-left: 4px;
+}
+
+.px-8, .pr-8, .p-8 {
+  padding-right: 8px;
+}
+
+.px-8, .pl-8, .p-8 {
+  padding-left: 8px;
+}
+
+.py-8, .pb-8, .p-8 {
+  padding-bottom: 8px;
+}
+
+.py-8, .pl-8, .p-8 {
+  padding-top: 8px;
+}
+
+.mt-1, .my-1 {
+  margin-top: 1rem !important;
+}
+
+.mt-2, .my-2 {
+  margin-top: 2rem !important;
+}
+
+.mt-3, .my-3 {
+  margin-top: 3rem !important;
+}
+
+.mt-4, .my-4 {
+  margin-top: 4rem !important;
+}
+
+.mt-n-1, .my-n-1 {
+  margin-top: 1rem !important;
+}
+
+.mt-n-2, .my-n-2 {
+  margin-top: 2rem !important;
+}
+
+.mt-n-3, .my-n-3 {
+  margin-top: 3rem !important;
+}
+
+.mt-n-4, .my-n-4 {
+  margin-top: 4rem !important;
+}
+
+
+.mb-1, .my-1 {
+  margin-bottom: 1rem !important;
+}
+
+.mb-2, .my-2 {
+  margin-bottom: 2rem !important;
+}
+
+.mb-3, .my-3 {
+  margin-bottom: 3rem !important;
+}
+
+.mb-4, .my-4 {
+  margin-bottom: 4rem !important;
+}
+
+.pb-1, .py-1 {
+  padding-bottom: 1rem !important;
+}
+
+.pb-2, .py-2 {
+  padding-bottom: 2rem !important;
+}
+
+.pb-3, .py-3 {
+  padding-bottom: 3rem !important;
+}
+
+.pb-4, .py-4 {
+  padding-bottom: 4rem !important;
+}
+
+.pb-4px {
+  padding-bottom: 4px !important;
+}
+
+.bg-auth-layout {
+  background: linear-gradient(167deg, rgba(222,152,113,1) 0%, rgba(251,183,145,1) 47%, rgba(235,121,58,1) 100%) !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-uppercased {
+  text-transform: uppercase;
+}
+
+.text-italic {
+  font-style: italic !important;
+}
+
+.text-gray {
+  color: gray;
+}
+
+.e-link:hover {
+  color: orange;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.d-flex-col{
+  display: flex;
+  flex-direction: column;
+}
+
+.d-flex-row, .d-flex{
+  display: flex;
+  flex-direction: row;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-grid {
+  display: grid;
+  grid-gap: 8px;
+}
+
+.justify-content-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.e-chk .mat-checkbox-label{
+  white-space: break-spaces;
+  text-align: start;
+}
+
+.e-chk .mat-checkbox-inner-container{
+  margin-top: 4px;
+}
+
+@media (min-width: 975px) {
+  .col-sm-6 {
+    width: 50%;
+    display: inline-flex;
+  }
+}
+
+.mat-list-option:hover, .mat-list-option:focus, .mat-nav-list .mat-list-item:hover, .mat-nav-list .mat-list-item:focus, .mat-action-list .mat-list-item:hover, .mat-action-list .mat-list-item:focus {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+mat-expansion-panel .mat-expansion-panel-header.cdk-keyboard-focused:not([aria-disabled=true]), .mat-expansion-panel .mat-expansion-panel-header.cdk-program-focused:not([aria-disabled=true]), .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]) {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.e-nav-active {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+.e-spacer{
+  flex: 1 1 auto;
+}
+
+.e-inner-wrapper {
+
+  padding: 10px 16px;
+  display: block;
+overflow-y: hidden;
+}
+.row-line{
+  display: flex;
+  width: 100%;
+}
+.row-line .col{
+  width: 33.3%;
+}

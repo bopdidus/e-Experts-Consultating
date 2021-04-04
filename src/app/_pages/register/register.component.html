@@ -1,0 +1,281 @@
+
+<div class="container-back">
+  <mat-card  class="mat-elevation-z14">
+    <mat-card-content>
+      <div style="display: grid; grid-template-columns: repeat(2, 350px);">
+        <div>
+          <form name="form" [formGroup]="formSteps" (ngSubmit)="submit(formSteps.value)" novalidate class="w-100" >
+            <mat-horizontal-stepper linear>
+              <mat-step>
+                <h2 style="font-size: 1.5rem;">{{(form.type == userRoles.COMPANY_EXPERT ? 'register.section_company_information_title' : 'register.section_personal_information_title') | translate }}</h2>
+                <mat-divider class="bg-orange mb-2" style="height: 4px; position: inherit;"></mat-divider>
+
+                <mat-error *ngIf="hasError" [translate]="errorMessage" style="margin-bottom: 15px; font-size: 1rem;"></mat-error>
+
+                <div class="col my-2" style=" padding-top: 8px; padding-bottom: 8px;">
+                  <mat-form-field appearance="fill">
+                    <mat-label  [translate]="'register.auth_profile'"></mat-label>
+                    <mat-select formControlName="type"  name="type" style="margin-right: 16px;">
+                      <mat-option color="orange"  *ngFor="let r of roles" [value]="r.key">
+                        {{r.value | translate}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+
+                <label [translate]="'register.lastname'" class="pull-left" *ngIf="formSteps.get('type').value != userRoles.COMPANY_EXPERT && formSteps.get('type').value != userRoles.COMPANY_SUBSCRIBER "></label>
+                <mat-form-field class="full-width-input w-100 mb-1" appearance="outline" *ngIf="formSteps.get('type').value != userRoles.COMPANY_EXPERT && formSteps.get('type').value != userRoles.COMPANY_SUBSCRIBER">
+                  <mat-icon matPrefix class="text-orange">person</mat-icon>
+                  <input matInput type="text"  name="lastname"  formControlName="lastname" required/>
+                  <mat-error  [translate]="'register.lastname_required'"></mat-error>
+                  <div *ngIf="formSteps.controls.lastname.invalid &&formSteps.controls.lastname.touched "> </div>
+                </mat-form-field>
+
+                <label [translate]="'register.firstname'" class="pull-left" *ngIf="formSteps.get('type').value != userRoles.COMPANY_EXPERT && formSteps.get('type').value != userRoles.COMPANY_SUBSCRIBER"></label>
+                <mat-form-field class="full-width-input w-100 mb-1" appearance="outline" *ngIf="formSteps.get('type').value != userRoles.COMPANY_EXPERT && formSteps.get('type').value != userRoles.COMPANY_SUBSCRIBER">
+                  <mat-icon matPrefix class="text-orange">person</mat-icon>
+                  <input matInput type="text"  name="firstname" formControlName="firstname"  required/>
+                  <mat-error [translate]="'register.firstname_required'"></mat-error>
+                  <div *ngIf="formSteps.controls.firstname.invalid &&formSteps.controls.firstname.touched "> </div>
+                </mat-form-field>
+
+                <label [translate]="'register.nic'" class="pull-left" *ngIf="formSteps.get('type').value != userRoles.COMPANY_EXPERT && formSteps.get('type').value != userRoles.COMPANY_SUBSCRIBER"></label>
+                <mat-form-field class="full-width-input w-100 mb-1" appearance="outline" *ngIf="formSteps.get('type').value != userRoles.COMPANY_EXPERT && formSteps.get('type').value != userRoles.COMPANY_SUBSCRIBER">
+                  <mat-icon matPrefix class="text-orange">recent_actors</mat-icon>
+                  <input matInput type="text" name="nic" formControlName="nic"  required />
+                  <mat-error [translate]="'register.nic_required'"></mat-error>
+                  <div *ngIf="formSteps.controls.nic.invalid &&formSteps.controls.nic.touched "> </div>
+                </mat-form-field>
+
+                <label [translate]="'register.sexe'" class="pull-left" *ngIf="formSteps.get('type').value != userRoles.COMPANY_EXPERT && formSteps.get('type').value != userRoles.COMPANY_SUBSCRIBER"></label>
+                <mat-radio-group name="sexe" formControlName="sexe" required  *ngIf="formSteps.get('type').value != userRoles.COMPANY_EXPERT && formSteps.get('type').value != userRoles.COMPANY_SUBSCRIBER">
+                  <mat-radio-button value="F">{{'register.female' | translate}}</mat-radio-button>
+                  <mat-radio-button value="M">{{'register.male' | translate}}</mat-radio-button>
+
+                </mat-radio-group>
+
+
+                <label [translate]="'register.experience_count'" class="pull-left" *ngIf="formSteps.get('type').value == userRoles.EXPERT "></label>
+                <mat-form-field class="full-width-input w-100 mb-1" appearance="outline" *ngIf="formSteps.get('type').value == userRoles.EXPERT">
+                  <mat-icon matPrefix class="text-orange">4k</mat-icon>
+                  <input matInput type="number"  name="experience" formControlName="experience" required/>
+                  <mat-error [translate]="'register.experience_count_required'"></mat-error>
+                  <div *ngIf="formSteps.controls.experience.invalid &&formSteps.controls.experience.touched "> </div>
+                </mat-form-field>
+
+                <label [translate]="'register.company_name'" class="pull-left" *ngIf="formSteps.get('type').value == userRoles.COMPANY_EXPERT || formSteps.get('type').value == userRoles.COMPANY_SUBSCRIBER"></label>
+                <mat-form-field class="full-width-input w-100 mb-1" appearance="outline" *ngIf="formSteps.get('type').value == userRoles.COMPANY_EXPERT || formSteps.get('type').value == userRoles.COMPANY_SUBSCRIBER">
+                  <mat-icon matPrefix class="text-orange">recent_actors</mat-icon>
+                  <input matInput type="text" name="company_name" formControlName="company_name"  required  />
+                  <mat-error [translate]="'register.company_name_required'"></mat-error>
+                  <div *ngIf="formSteps.controls.company_name.invalid &&formSteps.controls.company_name.touched "> </div>
+                </mat-form-field>
+
+                <label [translate]="'register.registre_commerce'" class="pull-left" *ngIf="formSteps.get('type').value == userRoles.COMPANY_EXPERT || formSteps.get('type').value == userRoles.COMPANY_SUBSCRIBER"></label>
+                <mat-form-field class="full-width-input w-100 mb-1" appearance="outline" *ngIf="formSteps.get('type').value == userRoles.COMPANY_EXPERT || formSteps.get('type').value == userRoles.COMPANY_SUBSCRIBER">
+                  <mat-icon matPrefix class="text-orange">chrome_reader_mode</mat-icon>
+                  <input matInput type="text" name="trade_id" formControlName="trade_id" required />
+                  <mat-error [translate]="'register.required_field'"></mat-error>
+                  <div *ngIf="formSteps.controls.trade_id.invalid &&formSteps.controls.trade_id.touched "> </div>
+                </mat-form-field>
+
+                <label [translate]="'register.Raison_sociale'" class="pull-left" *ngIf="formSteps.get('type').value == userRoles.COMPANY_EXPERT || formSteps.get('type').value == userRoles.COMPANY_SUBSCRIBER"></label>
+                <mat-form-field class="full-width-input w-100 mb-1 register-select" appearance="outline" *ngIf="formSteps.get('type').value == userRoles.COMPANY_EXPERT || formSteps.get('type').value == userRoles.COMPANY_SUBSCRIBER">
+                  <mat-icon matPrefix class="text-orange">store</mat-icon>
+                  <mat-select name="social_reason" required formControlName="social_reason">
+                    <mat-option  value="sarl"> SARL </mat-option>
+                    <mat-option  value="ets"> ETS </mat-option>
+                    <mat-option  value="sa"> SA </mat-option>
+                    <mat-option  value="snc"> SNC </mat-option>
+                    <mat-option  value="sas"> SAS </mat-option>
+                  </mat-select>
+                  <mat-error [translate]="'register.required_field'"></mat-error>
+                  <div *ngIf="formSteps.controls.social_reason.invalid &&formSteps.controls.social_reason.touched "> </div>
+                </mat-form-field>
+
+                <div>
+                  <button mat-button matStepperNext mat-flat-button type="button" class="pull-right btn-orange border-radius-0">{{'register.next' | translate}}<mat-icon matSuffix class="text-white">arrow_right</mat-icon></button>
+                </div>
+              </mat-step>
+
+              <!-- professional information-->
+
+              <mat-step *ngIf="formSteps.get('type').value != userRoles.SUBSCRIBER ">
+
+                <h2 style="font-size: 1.5rem;">{{'register.section_professional_information' | translate}}</h2>
+                  <mat-divider class="bg-orange mb-2" style="height: 4px; position: inherit;"></mat-divider>
+
+                  <mat-error *ngIf="hasError" [translate]="errorMessage" style="margin-bottom: 15px;"></mat-error>
+
+                  <label [translate]="'register.niu'" class="pull-left" ></label>
+                  <mat-form-field class="full-width-input w-100 mb-1" appearance="outline" >
+                    <mat-icon matPrefix class="text-orange">account_box</mat-icon>
+                    <input matInput type="text" name="niu" formControlName="niu" required />
+                    <mat-error [translate]="'register.required_field'"></mat-error>
+                    <div *ngIf="formSteps.controls.niu.invalid &&formSteps.controls.niu.touched "> </div>
+                  </mat-form-field>
+
+                  <label [translate]="'register.competence_territoriale'" class="pull-left" ></label>
+                  <mat-form-field class="full-width-input w-100 mb-1" appearance="outline" >
+                    <mat-icon matPrefix class="text-orange">location_city</mat-icon>
+                    <input matInput type="text" name="working_place" formControlName="working_place" required />
+                    <mat-error [translate]="'register.required_field'"></mat-error>
+                    <div *ngIf="formSteps.controls.working_place.invalid &&formSteps.controls.working_place.touched "> </div>
+                  </mat-form-field>
+
+                  <label [translate]="'register.company_activity'" class="pull-left" ></label>
+                  <mat-form-field class="full-width-input w-100 mb-1 register-select" appearance="outline" >
+                    <mat-icon matPrefix class="text-orange">work</mat-icon>
+                    <mat-select name="company_activity" formControlName="company_activity" multiple >
+                      <mat-option *ngFor="let item of activities" [value]="item.id"> {{item.name}} </mat-option>
+                    </mat-select>
+                    <mat-error [translate]="'register.company_activity_required'"></mat-error>
+                    <div *ngIf="formSteps.controls.company_activity.invalid &&formSteps.controls.company_activity.touched "> </div>
+                  </mat-form-field>
+
+                  <div>
+                    <button mat-button matStepperPrevious mat-flat-button type="button" class="pull-left btn-orange border-radius-0" style="margin-right: 12px;"><mat-icon matPrefix class="text-white">arrow_left</mat-icon>{{'register.previous' | translate}}</button>
+                    <button mat-button matStepperNext mat-flat-button type="button" class="pull-right btn-orange border-radius-0">{{'register.next' | translate}}<mat-icon matSuffix class="text-white">arrow_right</mat-icon></button>
+                  </div>
+
+              </mat-step>
+
+              <!--end of professional information-->
+
+
+              <!--start Location information-->
+
+              <mat-step>
+                  <h2 style="font-size: 1.5rem;">{{'register.section_localisation_information' | translate}}</h2>
+                  <mat-divider class="bg-orange mb-2" style="height: 4px; position: inherit;"></mat-divider>
+
+                  <mat-error *ngIf="hasError" [translate]="errorMessage" style="margin-bottom: 15px;"></mat-error>
+
+                  <label [translate]="'register.country'" class="pull-left" ></label>
+                  <mat-form-field class="full-width-input w-100 mb-1 register-select" appearance="outline">
+                    <mat-icon matPrefix class="text-orange">location_on</mat-icon>
+                    <mat-select name="country" required formControlName="country" (selectionChange)="getSelectedCountry()">
+                      <mat-option *ngFor="let c of countries" [value]="c.name"> {{c.name}} </mat-option>
+                    </mat-select>
+                    <mat-error [translate]="'register.country_required'"></mat-error>
+                    <div *ngIf="formSteps.controls.country.invalid &&formSteps.controls.country.touched "> </div>
+                  </mat-form-field>
+
+
+                  <label [translate]="'register.town'" class="pull-left"></label>
+                  <mat-form-field class="full-width-input w-100 mb-1 register-select" appearance="outline" >
+                    <mat-icon matPrefix class="text-orange">location_on</mat-icon>
+                    <mat-select name="city" required formControlName="city" >
+                      <mat-option *ngFor="let t of towns" [value]="t"> {{t}} </mat-option>
+                    </mat-select>
+                    <mat-error [translate]="'register.town_required'"></mat-error>
+                    <div *ngIf="formSteps.controls.city.invalid &&formSteps.controls.city.touched "> </div>
+                  </mat-form-field>
+
+                  <div>
+                    <button mat-button matStepperPrevious mat-flat-button type="button" class="pull-left btn-orange border-radius-0" style="margin-right: 12px;"><mat-icon matPrefix class="text-white">arrow_left</mat-icon>{{'register.previous' | translate}}</button>
+                    <button mat-button matStepperNext mat-flat-button type="button" class="pull-right btn-orange border-radius-0">{{'register.next' | translate}}<mat-icon matSuffix class="text-white">arrow_right</mat-icon></button>
+                  </div>
+                </mat-step>
+
+              <!--end of Location information-->
+
+              <mat-step>
+                <h2 style="font-size: 1.5rem;">{{'register.section_personal_contact_title' | translate}}</h2>
+                <mat-divider class="bg-orange mb-2" style="height: 4px; position: inherit;"></mat-divider>
+
+                <mat-error *ngIf="hasError" [translate]="errorMessage" style="margin-bottom: 15px;"></mat-error>
+
+                <label [translate]="'register.email'" class="pull-left"></label>
+                <mat-form-field class="full-width-input w-100 mb-1" appearance="outline" >
+                  <mat-icon matPrefix class="text-orange">email</mat-icon>
+                  <input matInput type="email" name="email" formControlName="email" required  />
+                  <mat-error [translate]="'register.email_required'"></mat-error>
+                  <div *ngIf="formSteps.controls.email.invalid &&formSteps.controls.email.touched "> </div>
+                </mat-form-field>
+
+                <label [translate]="'register.phone_number'" class="pull-left"></label>
+                <mat-form-field class="full-width-input w-100 mb-1" appearance="outline">
+                  <mat-icon matPrefix class="text-orange">tty</mat-icon>
+                  <input matInput type="text"  name="phoneNumber" formControlName="phoneNumber"  required/>
+                  <mat-error [translate]="'register.phone_number_required'"></mat-error>
+                  <div *ngIf="formSteps.controls.phoneNumber.invalid &&formSteps.controls.phoneNumber.touched "> </div>
+                </mat-form-field>
+
+                <div>
+                  <button mat-button matStepperPrevious mat-flat-button type="button" class="pull-left btn-orange border-radius-0" style="margin-right: 12px;"><mat-icon matPrefix class="text-white">arrow_left</mat-icon>{{'register.previous' | translate}}</button>
+                  <button mat-button matStepperNext mat-flat-button type="button" class="pull-right btn-orange border-radius-0">{{'register.next' | translate}}<mat-icon matSuffix class="text-white">arrow_right</mat-icon></button>
+                </div>
+              </mat-step>
+              <!-- information only for experts as a person-->
+              <mat-step *ngIf="formSteps.get('type').value == userRoles.EXPERT">
+                  <h2 style="font-size: 1.5rem;">{{'register.section_expert_information' | translate}}</h2>
+                  <mat-divider class="bg-orange mb-2" style="height: 4px; position: inherit;"></mat-divider>
+
+                  <mat-error *ngIf="hasError" [translate]="errorMessage" style="margin-bottom: 15px;"></mat-error>
+
+                  <label [translate]="'register.national_professional_order'" class="pull-left"></label>
+                  <mat-form-field class="full-width-input w-100 mb-1" appearance="outline" >
+                    <mat-icon matPrefix class="text-orange">featured_play_list</mat-icon>
+                    <input matInput type="text" name="national_order" formControlName="national_order" required  />
+                  </mat-form-field>
+
+                  <label [translate]="'register.international_professional_order'" class="pull-left"></label>
+                  <mat-form-field class="full-width-input w-100 mb-1" appearance="outline">
+                    <mat-icon matPrefix class="text-orange">featured_play_list</mat-icon>
+                    <input matInput type="text"  name="international_order" formControlName="international_order" required/>
+                  </mat-form-field>
+
+                  <div>
+                    <button mat-button matStepperPrevious mat-flat-button type="button" class="pull-left btn-orange border-radius-0" style="margin-right: 12px;"><mat-icon matPrefix class="text-white">arrow_left</mat-icon>{{'register.previous' | translate}}</button>
+                    <button mat-button matStepperNext mat-flat-button type="button" class="pull-right btn-orange border-radius-0">{{'register.next' | translate}}<mat-icon matSuffix class="text-white">arrow_right</mat-icon></button>
+                  </div>
+              </mat-step>
+
+              <!-- end of those information-->
+              <mat-step>
+                <h2 style="font-size: 1.5rem;">{{'register.section_account_infos_title' | translate}}</h2>
+                <mat-divider class="bg-orange mb-2" style="height: 4px; position: inherit;"></mat-divider>
+
+                <!--<mat-error *ngIf="hasError" [translate]="errorMessage" style="margin-bottom: 15px;"></mat-error>-->
+
+                <label [translate]="'register.password'" class="pull-left"></label>
+                <mat-form-field class="full-width-input w-100 mb-1" appearance="outline">
+                  <mat-icon matPrefix class="text-orange">password</mat-icon>
+                  <input matInput type="password" name="password" formControlName="password" required  />
+                  <mat-error [translate]="'register.password_required'"></mat-error>
+                </mat-form-field>
+
+                <label [translate]="'register.confirm_password'" class="pull-left"></label>
+                <mat-form-field class="full-width-input w-100 mb-1 mb-1" appearance="outline">
+                  <mat-icon matPrefix class="text-orange">password</mat-icon>
+                  <input matInput type="password" name="confirm_password" formControlName="confirm_password" required  />
+                  <mat-error [translate]="'register.confirm_password_required'"></mat-error>
+                </mat-form-field>
+
+                <div>
+                  <input type="checkbox" class="e-chk" style="float: left;" name="accept_conditions" color="orange" formControlName="accept_conditions" required>{{'register.accept_conditions' | translate}}
+                  <mat-error  [translate]="'register.accept_conditions_required'" class="pull-left mb-1"></mat-error>
+                </div>
+<!--*ngIf="formSteps.submitted && !form.accept_conditions"-->
+                <div>
+                  <button mat-button matStepperPrevious mat-flat-button type="button" class="pull-left btn-orange border-radius-0" style="margin-right: 12px;"><mat-icon matPrefix class="text-white">arrow_left</mat-icon>{{'register.previous' | translate}}</button>
+                  <button [disabled]="loading" mat-button mat-flat-button type="submit" style="width: 120px;" color="primary" class="pull-right  border-radius-0">{{'register.send' | translate}}</button>
+                </div>
+              </mat-step>
+            </mat-horizontal-stepper>
+          </form>
+          <br>
+          <a [routerLink]="['/login']" [translate]="'register.login'"></a>
+        </div>
+        <div id="imageBack">
+
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<script>
+</script>
+

@@ -1,0 +1,45 @@
+.container-fluid{
+  background-color: #ed850a;
+  margin: 0;
+  padding-top:50px;
+  padding-bottom: 50px;
+}
+.container-fluid p {
+  background: transparent;
+  position: absolute;
+  top:0;
+  right: 0;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+.container-fluid h1{
+  font-size: 5em;
+  font-weight: bold;
+  font-style: italic;
+
+}
+#input-container{
+  width: 60%;
+  position: absolute;
+  left: 0;
+right: 0;
+margin: auto;
+  top: 200px;
+  z-index: 9999;
+}
+#input-container input-group{
+  width: 100%;
+  height: 50px;
+}
+
+@media only screen and (max-width:800px){
+  .container-fluid h1{
+    line-height: 60px;
+  }
+  #input-container{
+    width: 90%;
+    top: 280px;
+    z-index: 9999;
+  }
+}

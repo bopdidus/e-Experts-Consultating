@@ -1,0 +1,128 @@
+[
+  {
+    "title": "Finance et Comptabilité",
+    "activities":[
+      "Comptabilité financière",
+      "Comptabilité de gestion",
+      "Finance d’entreprise",
+      "Finance des marchés",
+      "Audits Comptables et Financiers",
+      "Contrôle de gestion",
+      "Commissariat Aux Comptes",
+      "Statistiques décisionnelles",
+      "Agent général d’assurances",
+      "Analyste de crédit",
+      "Analyste financier",
+      "Assistant comptable",
+      "Actuariat"
+    ]
+  },
+{
+  "title": "Management",
+  "activities":[
+    "Management des RH",
+    "Management stratégique",
+    "Marketing",
+    "Management logistic ",
+    "QHSE",
+    "Gestion des projets"
+  ]
+},
+
+ {
+  "title": "Informatique",
+  "activities":[
+    "Maintenance des systèmes informatiques",
+    "Réseau et télécom",
+    "Génie logiciel",
+    "SEO",
+    "Administration système",
+    "Administration réseau",
+    "Cloud computing",
+    "Cyber sécurité"
+  ]
+ },
+ {
+"title":"Communication",
+"activities":[
+  "Publicité",
+  "Journalisme",
+  "Presse",
+  "Redaction",
+  "Communication financière",
+  "Digital Marketing",
+  "Community management",
+  "Wedding planing"
+  ]
+ },
+ {
+   "title":"Sécurité et environnement",
+   "activities":[
+    "Sécurité routière",
+    "Sécurité aéroportuaire",
+    "Sécurité férroviaire",
+    "Gardinage",
+    "Enquête",
+    "Sauvetage",
+    "Dressage d'animaux",
+    "Hygiène et sécurité",
+    "Protection et exploitation de territoires fauniques"
+  ]
+ },
+
+ {
+"title": "Génie civil",
+"activities": [
+  "Plomberie",
+  "Architecture",
+  "Maçonnerie",
+  "Peinture",
+  "Electricité",
+  "Domotique",
+  "Topographie",
+  "Geométrie"
+  ]
+ },
+ {
+   "title": "Droit",
+   "activities":[
+    "Droit fiscal",
+    "Magistrature",
+    "Droit informatique",
+    "Droit général"
+  ]
+ },
+ {
+   "title": "Médecine",
+   "activities":[
+    "Cardiologie",
+    "Angiologie",
+    "Médecine générale",
+    "Dermatologie",
+    "Endocrinologie",
+    "Hématologie",
+    "Hépato –gastro – entérologie",
+    "Immunologie",
+    "Néphrologie",
+    "Odontologie",
+    "Neurologie",
+    "Orthopédie",
+    "Pneumologie",
+    "Rhumatologie",
+    "Cancérologie",
+    "Psychiatrie",
+    "Chirurgie cardiaque",
+    "Chirurgie digestive",
+    "Chirurgie générale",
+    "Chirurgie pédiatrique",
+    "Chirurgie dentaire",
+    "Chirurgie plastique",
+    "Neuro chirurgie",
+    "Ophtalmologie",
+    "Opticerie",
+    "Pédiatrie",
+    "kinésithérapie"
+  ]
+ }
+
+]

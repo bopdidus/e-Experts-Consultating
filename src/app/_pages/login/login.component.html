@@ -1,0 +1,88 @@
+<div class="container-fluid">
+  <mat-card style="min-width: 400px; border-top: 8px solid orange;" class="mat-elevation-z14 border-radius-0">
+    <mat-card-content>
+      <form name="form" (ngSubmit)="submit()" #f="ngForm" novalidate class="w-100">
+        <h2 [translate]="'login.title'" class="auth-form-title text-italic mb-3 mt-2 text-uppercased"></h2>
+
+        <mat-error *ngIf="hasError" [translate]="errorMessage" style="margin-bottom: 15px;"></mat-error>
+
+        <!--        <mat-form-field class="full-width-input" appearance="outline">-->
+        <!--          <input matInput placeholder="{{'login.nic' | translate }}" type="text"  name="nic" [(ngModel)]="form.nic" #nic="ngModel" required>-->
+        <!--          <mat-error [translate]="'login.nic_required'"></mat-error>-->
+        <!--        </mat-form-field>-->
+
+        <mat-horizontal-stepper>
+          <mat-step>
+            <label [translate]="'login.auth_profile'" class="pull-left"></label>
+            <mat-form-field class="full-width-input w-100 mb-1 register-select" appearance="outline">
+              <mat-icon matPrefix class="text-orange">person</mat-icon>
+              <mat-select name="company_activity" [(ngModel)]="form.type">
+                <mat-option *ngFor="let r of roles" [value]="r.key"> {{r.value | translate}} </mat-option>
+              </mat-select>
+              <mat-error [translate]="'login.auth_profile_required'"></mat-error>
+            </mat-form-field>
+
+            <div>
+              <button [disabled]="form.type == null" mat-button matStepperNext mat-flat-button type="button" class="w-100 text-uppercased mb-2 btn-orange border-radius-0" style="padding: 8px;">{{'register.next' | translate}}<mat-icon matSuffix class="text-white">arrow_right</mat-icon></button>
+            </div>
+          </mat-step>
+          <mat-step>
+            <mat-form-field class="full-width-input mb-2" appearance="outline">
+              <mat-icon matPrefix class="text-orange">https</mat-icon>
+              <input matInput placeholder="{{'login.email' | translate }}" type="email" name="email" [(ngModel)]="form.email" required #email="ngModel"/>
+              <mat-error [translate]="'login.email_required'"></mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="full-width-input mb-2" appearance="outline">
+              <mat-icon matPrefix class="text-orange">vpn_key</mat-icon>
+              <input matInput placeholder="{{'login.password' | translate }}" type="password" name="password" [(ngModel)]="form.password" required #password="ngModel"/>
+              <mat-error [translate]="'login.password_required'"></mat-error>
+            </mat-form-field>
+
+            <button [disabled]="loading" mat-flat-button type="submit" class="w-100 btn-orange border-radius-0 text-uppercased mb-2" style="padding: 8px;">{{'login.login' | translate}}</button>
+          </mat-step>
+        </mat-horizontal-stepper>
+        <div class="divider mb-2 mat-elevation-z19"></div>
+      </form>
+      <div class="w-100" style="display: flex; flex-direction: row; justify-content: space-between; padding-top: 16px;">
+        <a [routerLink]="['/recover-password']" [translate]="'login.forgotten_password'" class="e-link text-gray"></a>
+        <a [routerLink]="['/register']" [translate]="'login.create_account'" class="e-link"></a>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<style>
+  .divider {
+    height: 1px;
+    background: rgba(0, 0, 0, .12);
+    width: 100%
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+  }
+
+  mat-form-field {
+    display: block;
+  }
+
+  mat-card {
+    max-width: 400px;
+    margin: 2em auto;
+    text-align: center;
+  }
+
+  mat-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+

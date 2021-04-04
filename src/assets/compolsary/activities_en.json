@@ -1,0 +1,128 @@
+[
+  {
+    "title": "Finance and accounting",
+    "activities":[
+      "Financial Accounting",
+      "Management accounting",
+      "Business Finance",
+      "Financial markets",
+      "Accounting and Financial Audits",
+      "Management control",
+      "Statutory Auditors",
+      "Decision statistics",
+      "General insurance agent",
+      "Credit analyst",
+      "Financial Analyst",
+      "Accounting assistant",
+      "Actuarial"
+    ]
+  },
+{
+  "title": "Management",
+  "activities":[
+    "HR management",
+    "strategic management",
+    "Marketing",
+    "Management logistics",
+    "QHSE",
+    "Project management"
+  ]
+},
+
+ {
+  "title": "Computer science",
+  "activities":[
+    "Computer systems maintenance",
+    "Network and Telecom",
+    "Software engineering",
+    "SEO",
+    "System administration",
+    "Network administration",
+    "Cloud computing",
+    "Cybersecurity "
+  ]
+ },
+ {
+"title":"Communication",
+"activities":[
+  "Publicity",
+  "Journalism",
+  "News",
+  "Writing",
+  "Financial communication",
+  "Digital Marketing",
+  "Community management",
+  "Wedding planing"
+  ]
+ },
+ {
+   "title":"Safety and environment",
+   "activities":[
+    "Road safety",
+    "Airport security",
+    "Rail security",
+    "Guarding",
+    "Investigation",
+    "Rescue",
+    "Animal training",
+    "Health and Safety",
+    "Protection and exploitation of wildlife areas"
+  ]
+ },
+
+ {
+"title": "Civil engineering",
+"activities": [
+  "Plumbing",
+  "Architecture",
+  "Masonry",
+  "Painting",
+  "electricity",
+  "Automation",
+  "Topography",
+  "Geometry"
+  ]
+ },
+ {
+   "title": "Law",
+   "activities":[
+    "Fiscal law",
+    "Magistracy",
+    "Computer law",
+    "General law"
+  ]
+ },
+ {
+   "title": "Medicine",
+   "activities":[
+    "Cardiology",
+    "Angiology",
+    "General medicine",
+    "Dermatology",
+    "Endocrinology",
+    "Hematology",
+    "Hepato-gastro-enterology",
+    "Immunology",
+    "Nephrology",
+    "odontology",
+    "Neurology",
+    "Orthopedics",
+    "Pulmonology",
+    "Rheumatology",
+    "Cancerology",
+    "Psychiatry",
+    "Heart surgery",
+    "Digestive Surgery",
+    "general surgery",
+    "Pediatric surgery",
+    "Dental surgery",
+    "Plastic surgery",
+    "Neurosurgery",
+    "Ophthalmology",
+    "Opticerie",
+    "Pediatrics",
+    "physiotherapy"
+  ]
+ }
+
+]

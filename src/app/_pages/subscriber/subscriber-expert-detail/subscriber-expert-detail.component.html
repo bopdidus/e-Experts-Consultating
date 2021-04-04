@@ -1,0 +1,55 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-3">
+            <div id="imagePreview" class="e-avatar"></div>
+        </div>
+        <div class="col-lg-9">
+            <div class="row mb-3">
+                <div class="col">
+                    <table class="table">
+                        <tr>
+                            <td>Nom</td>
+                            <td>{{ expert.lastName }}</td>
+                            <td>Prenom</td>
+                            <td> {{ expert.firstName }}</td>
+                        </tr>
+                        <tr>  
+                            <td>Numero de contribuable</td>
+                            <td>{{ expert.niu }}</td>
+                            <td>Domaine de Competence</td>
+                            <td>{{ expert.working_place }}</td>
+                        </tr>
+                        <tr>
+                            <td>Experience</td>
+                            <td>{{ expert.experience }}</td>
+                            <td>Domaine d'activites</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Ordre national</td>
+                            <td>{{ expert.national_order }}</td>
+                            <td>Ordre international</td>
+                            <td>{{ expert.international_order }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <form action="" class="col-lg-12">
+                    <div class="form-group">
+                        <mat-label>Laisser un message</mat-label>
+                        <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                        <mat-hint align="end">0/500</mat-hint>
+                    </div>
+                    <div class="form-group">
+                        <label for="">associer un fichier</label>
+                        <input type="file" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-success" type="submit">Envoyer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+mat-grid-tile{
+  display: block;
+}
+mat-card{
+  width: 100%;
+}
+.e-avatar {
+  height: 175px;
+  width: 175px;
+  border: 1px solid gainsboro;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}

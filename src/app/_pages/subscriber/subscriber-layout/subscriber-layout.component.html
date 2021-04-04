@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <p>
+    <select >
+      <option value="fr">
+        {{'home.toolbar.french' | translate}}
+      </option>
+      <option>
+        {{'home.toolbar.english'| translate}}
+      </option>
+    </select>
+      <a mat-button class="text-white" [routerLink]="['profile']">
+       <mat-icon>person</mat-icon>
+       <span>Profile</span>
+      </a>
+      <a mat-button class="text-white" >
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Deconnexion</span>
+      </a>
+  </p>
+
+  <h1 class="my-5 text-white">e-Experts & Consultants</h1>
+  <div id="input-container">
+      <div class="input-group">
+          <input class="form-control py-4" type="search" placeholder="search" id="example-search-input">
+          <span class="input-group-append">
+            <button class="btn btn-primary" type="button">
+                <i class="fa fa-search">
+                  <mat-icon>search</mat-icon>
+                </i>
+
+            </button>
+          </span>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,186 @@
+{
+  "months": {
+    "january": "Janvier",
+    "february": "Février",
+    "march": "Mars",
+    "april": "Avril",
+    "may": "Mai",
+    "june": "Juin",
+    "july": "Juillet",
+    "august": "Août",
+    "september": "Septembre",
+    "october": "Octobre",
+    "november": "Novembre",
+    "december": "Décembre"
+  },
+	"home": {
+    "menu": {
+      "home": "Accueil",
+      "about": "A Propos",
+      "services": "Services",
+      "contact": "Contact"
+    },
+    "toolbar": {
+      "login": "Connexion",
+      "french": "Français",
+      "english": "Anglais"
+    },
+    "copyright": "Copyright 2021. Tous droits e-Experts & Consultants",
+		"sections": {
+      "services": {
+        "title": "Nos Services"
+      }
+    }
+	},
+	"login": {
+		"auth_profile": "Profil de connexion",
+		"authenticationFailed": "E-mail, Numéro de carte ou mot de passe incorrect",
+		"create_account": "Créer un compte",
+		"email": "E-Mail",
+		"email_required": "Renseignez votre adresse mail svp",
+		"forgotten_password": "Mot de passe oublié",
+		"login": "Connexion",
+		"nic": "Numéro carte identité",
+		"nic_required": "Renseignez votre numéro de carte svp",
+		"password": "Mot de passe",
+		"password_required": "Renseignez votre mot de passe svp",
+		"requiredFields": "Renseignez tous les champs svp",
+		"title": "Connexion"
+	},
+	"recover_password": {
+		"create_account": "Créer un compte",
+		"email": "E-Mail",
+		"email_required": "Renseignez votre adresse mail svp",
+		"invalid_email": "Format d'adresse invalide",
+		"login": "J'ai déjà un compte",
+		"notice": "Votre nouveau mot de passe sera envoyée à votre adresse, si elle est vérifiée.",
+		"return_login": "Retourner à la page de connexion",
+		"save": "Valider",
+		"success_message": "Un e-mail contenant les instructions de connexion vous a été envoyé à votre boite mail.",
+		"title": "Récupération mot de passe"
+	},
+	"register": {
+    "auth_profile": "Profil d'inscription ",
+		"accept_conditions": "Accepter les conditions d'utilisation de la plateforme",
+		"accept_conditions_required": "Acceptez les conditions d'utilisation svp",
+		"company_activity": "Activité",
+		"company_activity_required": "Activité d'entreprise requise",
+		"company_name": "Nom d'entreprise",
+		"company_name_required": "Saisir le nom de l'entreprise svp.",
+		"confirm_password": "Confirmation mot de passe",
+		"confirm_password_required": "Confirmation mot de passe requise",
+		"email": "E-Mail",
+		"email_required": "Renseignez votre adresse mail svp",
+		"experience_count": "Années d'expérience",
+		"experience_count_required": "Années d'expérience requises.",
+		"firstname": "Prénom(s)",
+		"firstname_required": "Saisir vos prénoms",
+		"invalidExperiences": "Valeur d'expériences invalide",
+		"lastname": "Nom(s)",
+		"lastname_required": "Saisir vos noms",
+		"login": "J'ai déjà un compte",
+		"next": "Suivant",
+		"nic": "Numéro carte identité",
+		"nic_required": "Saisir votre numéro de carte d'identité",
+		"password": "Mot de passe",
+		"password_required": "Mot de passe requis",
+		"passwords_missmatch": "Les mot de passe ne sont pas identiques",
+		"phone_number": "Numéro téléphone",
+		"phone_number_required": "Numéro téléphone requis",
+		"previous": "Précédent",
+		"requiredFields": "Renseignez tous les champs svp",
+		"save": "Enregistrer",
+		"section_account_infos_title": "Informations du compte",
+		"section_company_information_title": "Informations d'entreprise",
+		"section_personal_contact_title": "Contact Personnel",
+    "section_personal_information_title": "Informations personnelles",
+    "section_professional_information": "Informations professionelles",
+    "send": "Envoyer",
+    "male":"Masculin",
+    "female":"Feminin",
+		"title": "Inscription",
+		"town": "Ville",
+    "town_required": "Ville requise",
+    "country_required": "Pays requis",
+    "registre_commerce": "Numéro de registre de commerce",
+    "niu": "Numéro de carte contribuable",
+    "Raison_sociale": "Raison sociale",
+    "domaine_expertise": "Domaine d'expertise",
+    "ordre_professionnel_national": "Ordre professionnel national",
+    "ordre_professionnel_international": "Ordre professionnel international",
+    "required_field": "Champs requis",
+    "section_expert_information": "Information sur l'expertise",
+    "national_professional_order": "Ordre professionnel national",
+    "international_professional_order": "Ordre professionnel international",
+    "competence_territoriale": "Compétence territoriale",
+    "section_localisation_information": "Informations de localisation",
+    "country": "Pays",
+    "sexe": "Sexe",
+    "sexe_required": "Sexe est requis"
+	},
+	"user_types": {
+		"admin": "Administrator",
+		"company_subscriber": "Entreprise abonnée",
+		"company_expert": "Entreprise experte",
+		"expert": "Expert",
+		"subscriber": "Abonné"
+	},
+  "expert": {
+    "layout": {
+      "dashboard":{
+        "title":"Tableau de bord",
+        "website": "Website",
+        "number_consultation":"Nombre de consultation effectuée:",
+        "mark_consultation":"Note de prestation:",
+        "message_received":"Nombre de message reçu:",
+        "message":" Nous vous remercions d’entré de jeux pour la confiance que vous nous faites pour mettre en avant votre / vos savoirs dans l’optique d’apporter des solutions aux préoccupations émises par nos abonnés et visant la résolution de leur(s) problème(s) ponctuel(s) et quotidien(s).Nous vous exhortons à faire preuve de professionnalisme et d’exercer uniquement dans le respect des lois nationales et internationales qui régissent vos professions respectives. Nous nous réservons le droit de vous désabonner de la plateforme en cas de plaintes récurrentes à votre sujet. Nous évaluerons la satisfaction des abonnés à la fin de chacune de vos prestations et vous serez notifié en cas de plainte."
+      } ,
+      "menu": {
+        "dashbord": "Tableau de bord",
+        "experiences": "Mes expériences",
+        "consultations": "Mes consultations",
+        "params": {
+          "title": "Paramètres",
+          "profile": "Mon profil",
+          "logout": "Déconnexion"
+        }
+      }
+    }
+  },
+  "subscriber": {
+    "layout": {
+      "dashboard": {
+        "title": "Tableau de bord",
+        "number_consultation": "Nombre de consultation effectuée:",
+        "mark_consultation": "Note de prestation:",
+        "message_received": "Nombre de message reçu:",
+        "message": " Nous vous remercions d’entré de jeux pour la confiance que vous nous faites pour mettre en avant votre / vos savoirs dans l’optique d’apporter des solutions aux préoccupations émises par nos abonnés et visant la résolution de leur(s) problème(s) ponctuel(s) et quotidien(s).Nous vous exhortons à faire preuve de professionnalisme et d’exercer uniquement dans le respect des lois nationales et internationales qui régissent vos professions respectives. Nous nous réservons le droit de vous désabonner de la plateforme en cas de plaintes récurrentes à votre sujet. Nous évaluerons la satisfaction des abonnés à la fin de chacune de vos prestations et vous serez notifié en cas de plainte."
+      }
+    },
+    "my_consultations": {
+      "title": "Mes consultations",
+      "filter": "Filtre : ",
+      "from": "De : ",
+      "to": "à : "
+    },
+    "experts":{
+      "asc":"Par odre alphabetique croissant",
+      "desc":"Par odre alphabetique decroissant",
+      "search":"Recherche",
+      "exp":"experiences"
+    }
+  },
+  "buttons":{
+    "edit":"Modifier",
+    "save": "Enregistrer",
+    "cancel":"Annulé",
+    "last_password_forgot":"J'ai oublié l'ancien mot de passe",
+    "change_password":"Modifier le mot de passe",
+    "delete":"Supprimer"
+  },
+  "labels":{
+    "last_password":"Entrer l'ancien mot de passe",
+    "new_password":"Entrer le nouveau de passe",
+    "confirmation_password":"Confirmer le nouveau mot de passe"
+  }
+}

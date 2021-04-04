@@ -1,0 +1,35 @@
+.grid-item {
+  color: gray;
+  padding: 8px;
+  cursor: pointer;
+  border: 1px solid gray;
+  border-bottom: 1px solid transparent;
+}
+
+.grid-item.last {
+  border-bottom: 1px solid gray;
+}
+
+.grid-item.grid-item-hover:hover {
+  color: white;
+  background-color: #007bff;
+}
+
+.grid-item.active {
+  background-color: orange;
+  color: white;
+}
+
+.grid-item.date-filter-item {
+  text-align: center;
+}
+
+.grid-item.grid-data {
+  display: flex;
+  justify-content: space-between;
+}
+
+.grid-data>.grid-data-date {
+  font-style: italic;
+  max-font-size: 13px;
+}

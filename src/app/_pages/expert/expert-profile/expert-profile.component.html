@@ -1,0 +1,230 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-lg-6">
+          <div class="d-inline-block">
+            <label>Avatar</label>
+            <div id="imagePreview" class="e-avatar">
+            </div>
+            <label [ngClass]="{'w-100': !hasAvatar(), 'w-50': hasAvatar()}" for="imagePicker" class="btn btn-primary border-radius-0 mt-2">
+                {{'buttons.edit' | translate}}
+              <input type="file" accept="image/*" id="imagePicker" hidden (change)="onFileSelected()">
+            </label>
+            <button class="btn btn-danger w-50 border-radius-0" *ngIf="hasAvatar()">{{'buttons.delete' | translate}}</button>
+          </div>
+        </div>
+        <div class="col-lg-6 py-2">
+          <div class="row">
+              <a href="javascript:void(0);" (click)="onPasswordChange()">{{'buttons.change_password' | translate}}</a>
+          </div>
+          <div class="row mt-3" *ngIf="isPasswordChange == true">
+            <form [formGroup]="passwordForm" (ngSubmit)="changePassword(passwordForm.value)">
+                <mat-error *ngIf="passwordForm.hasError('notSame', 'passwords')">Passwords do not match</mat-error>
+                <div class="form-group">
+                  <mat-form-field appearance="fill"  class="full-width-input w-100 mb-1" >
+                      <mat-label>{{'labels.last_password' | translate}}</mat-label>
+                      <input matInput [type]="hide ? 'password' : 'text'" formControlName="oldPassword" name="oldPassword">
+                      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                      </button>
+                      <mat-error *ngIf="passwordForm.controls.oldPassword.invalid && passwordForm.controls.oldPassword.touched"></mat-error>
+                    </mat-form-field>
+                  <small>
+                    <a href="">{{'buttons.last_password_forgot' | translate}}</a>
+                  </small>
+                </div>
+                <div class="form-group">
+                    <mat-form-field appearance="fill"  class="full-width-input w-100 mb-1" >
+                        <mat-label>{{'labels.new_password' | translate}}</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" name="password">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" >
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="passwordForm.controls.password.invalid && passwordForm.controls.password.touched"></mat-error>
+                      </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field appearance="fill"  class="full-width-input w-100 mb-1" >
+                        <mat-label>{{'labels.confirmation_password' | translate}}</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'"  formControlName="confirm_password" name="confirm_password">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" >
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="passwordForm.controls.confirm_password.invalid && passwordForm.controls.confirm_password.touched">This field must be filled</mat-error>
+                      </mat-form-field>
+                </div>
+                <div *ngIf="passwordForm.invalid">{{passwordForm.getError()}}</div>
+                <div class="form-group row" *ngIf="isPasswordChange == true">
+                    <button mat-raised-button color="accent" class="mr-3 text-white" (click)="onPasswordChange()" >
+                      <mat-icon>exit_to_app</mat-icon>
+                      {{'buttons.cancel' | translate}}
+                    </button>
+                    <button mat-raised-button color="primary" class="text-white" [disabled]="!passwordForm.valid" >
+                      <mat-icon>save</mat-icon>
+                      {{'buttons.save' | translate}}
+                    </button>
+                </div>
+            </form>
+          </div>
+        </div>
+  </div>
+  <div class="row">
+          <div class="col-lg-12">
+            <div class="card mb-2 ">
+              <div class="card-header">
+                <button class="btn btn-primary pull-right" (click)="onEdit()" >
+                  <mat-icon>edit</mat-icon>
+                  {{'buttons.edit' | translate}}
+                </button>
+              </div>
+              <div class="card-content p-2">
+                  <form action="" class="row" [formGroup]="expertForm" (ngSubmit)="onSubmit(expertForm.value)">
+                      <div class="col-md-6">
+                        <div class="form-group row" *ngIf="expert.isCompany != true">
+                            <label for="lastname"  class="col-sm-4 col-form-label" [translate]="'register.lastname'">:</label>
+                            <div class="col-sm-8">
+                              <input type="text" [readonly]="notEdition" formControlName="lastname" class="form-control-plaintext" name="lastname" value="John">
+                            </div>
+                        </div>
+                        <div class="form-group row" *ngIf="expert.isCompany == true">
+                            <label for="company_name"  class="col-sm-4 col-form-label" [translate]="'register.company_name'">:</label>
+                            <div class="col-sm-8">
+                              <input type="text" [readonly]="notEdition" formControlName="company_name" class="form-control-plaintext" name="company_name">
+                            </div>
+                        </div>
+                        <div class="form-group row" *ngIf="expert.isCompany == true">
+                            <label for="email" class="col-sm-4 col-form-label" [translate]="'register.registre_commerce'" ></label>
+                            <div class="col-sm-8">
+                                <input type="text" [readonly]="notEdition" formControlName="trade_id" class="form-control-plaintext" name="trade_id" >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="phone_number" class="col-sm-4 col-form-label" [translate]="'register.phone_number'"></label>
+                            <div class="col-sm-8">
+                                <input type="text" [readonly]="notEdition" formControlName="phoneNumber" class="form-control-plaintext" name="phoneNumber"   >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-sm-4 col-form-label" [translate]="'register.email'" ></label>
+                            <div class="col-sm-8">
+                                <input type="text" [readonly]="notEdition" formControlName="email" class="form-control-plaintext" name="email" >
+                            </div>
+                        </div>
+                        <div class="form-group row" *ngIf="expert.isCompany == true">
+                            <label for="email" class="col-sm-4 col-form-label" [translate]="'expert.layout.dashboard.website'" ></label>
+                            <div class="col-sm-8">
+                                <input type="text" [readonly]="notEdition" formControlName="website" class="form-control-plaintext" name="website" >
+                            </div>
+                        </div>
+                        <div class="form-group row" >
+                            <label for="working_place" class="col-sm-4 col-form-label" [translate]="'register.competence_territoriale'" ></label>
+                            <div class="col-sm-8">
+                                <input type="text" [readonly]="notEdition" formControlName="working_place" class="form-control-plaintext" name="working_place" >
+                            </div>
+                        </div>
+                        <div class="form-group row" *ngIf="expert.isCompany != true">
+                            <label for="nic" class="col-sm-4 col-form-label"  [translate]="'register.nic'"></label>
+                            <div class="col-sm-8">
+                                <input type="text" [readonly]="notEdition" formControlName="nic" class="form-control-plaintext" name="nic" >
+                            </div>
+                        </div>
+                        <div class="form-group row" *ngIf="expert.isCompany != true">
+                            <label for="nic" class="col-sm-4 col-form-label"  [translate]="'register.experience_count'"></label>
+                            <div class="col-sm-8">
+                                <input type="number" [readonly]="notEdition" formControlName="experience" class="form-control-plaintext" name="experience" >
+                            </div>
+                        </div>
+                        <div class="form-group row" *ngIf="expert.isCompany != true">
+                            <label for="sexe_field" class="col-sm-4 col-form-label"  [translate]="'register.sexe'"></label>
+                            <div class="col-sm-8">
+                                <input type="radio" [readonly]="notEdition" formControlName="sexe" class="mr-2" id="sexe_field" value="M" [disabled]="IsInEdition">Homme
+                                <input type="radio" [readonly]="notEdition" formControlName="sexe" class="mx-2" id="sexe_field" value="F" [disabled]="IsInEdition">Femme
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row" *ngIf="expert.isCompany != true">
+                            <label for="firstname" class="col-sm-6 col-form-label" [translate]="'register.firstname'"></label>
+                            <div class="col-sm-6">
+                                <input type="text" [readonly]="notEdition" formControlName="firstname" class="form-control-plaintext" name="firstname"  >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="country" class="col-sm-6 col-form-label" [translate]="'register.country'"></label>
+                            <div class="col-sm-6">
+                                <select name="country" class="form-control" required *ngIf="IsInEdition == true" formControlName="country" (change) ="loadCities()" >
+                                    <option *ngFor="let c of countries" [value]="c.name"> {{c.name}} </option>
+                                </select>
+                                <input type="text" [readonly]="notEdition" *ngIf="IsInEdition==false" id="country_field" formControlName="country" class="form-control-plaintext"  >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="city" class="col-sm-6 col-form-label" [translate]="'register.town'"></label>
+                            <div class="col-sm-6">
+                                <select name="city"  class="form-control" required  *ngIf="IsInEdition == true" formControlName="city">
+                                    <option *ngFor="let t of towns" [value]="t"> {{t}} </option>
+                                </select>
+                                <input type="text" [readonly]="notEdition" *ngIf="IsInEdition==false" formControlName="city" id="city_field" class="form-control-plaintext"  >
+                            </div>
+                        </div>
+                        <div class="form-group row" >
+                            <label for="niu" class="col-sm-6 col-form-label"  [translate]="'register.niu'"></label>
+                            <div class="col-sm-6">
+                                <input type="text" [readonly]="notEdition" class="form-control-plaintext" name="niu" formControlName="niu" >
+                            </div>
+                        </div>
+                        <!--<div class="form-group row" *ngIf="expert.isCompany == true">
+                          <label for="company_activity" class="col-sm-6 col-form-label"  [translate]="'register.company_activity'"></label>
+                          <div class="col-sm-6">
+                              <select name="company_activity" class="form-control" name="company_activity" *ngIf="IsInEdition == true" formControlName="company_activity"  multiple>
+                                  <optgroup *ngFor="let a of activities" [label]="a.title">
+                                    <option *ngFor="let item of a.activities" [value]="a"> {{item}} </option>
+                                  </optgroup>
+                                </select>
+                                <textarea *ngIf="IsInEdition==false" class="form-control-plaintext" > </textarea>
+                          </div>
+                        </div>-->
+                        <div class="form-group row"  *ngIf="expert.isCompany == true">
+                            <label for="social_reason" class="col-sm-6 col-form-label"  [translate]="'register.Raison_sociale'"></label>
+                            <div class="col-sm-6">
+                              <select name="social_reason" required formControlName="social_reason">
+                                <option  value="sarl"> SARL </option>
+                                <option  value="ets"> ETS </option>
+                                <option  value="sa"> SA </option>
+                                <option  value="snc"> SNC </option>
+                                <option  value="sas"> SAS </option>
+                              </select>
+                                  <input *ngIf="IsInEdition==false" class="form-control-plaintext" >
+                            </div>
+                          </div>
+                          <div class="form-group row" *ngIf="expert.isCompany == false">
+                              <label for="niu" class="col-sm-6 col-form-label"  [translate]="'register.national_professional_order'"></label>
+                              <div class="col-sm-6">
+                                  <input type="text" [readonly]="notEdition" class="form-control-plaintext" name="national_order" formControlName="national_order" >
+                              </div>
+                          </div>
+                          <div class="form-group row" *ngIf="expert.isCompany == false">
+                              <label for="niu" class="col-sm-6 col-form-label"  [translate]="'register.international_professional_order'"></label>
+                              <div class="col-sm-6">
+                                  <input type="text" [readonly]="notEdition" class="form-control-plaintext" name="international_order" formControlName="international_order" >
+                              </div>
+                          </div>
+                        <div class="form-group row" *ngIf="IsInEdition == true">
+                            <button mat-raised-button color="accent" class="mr-3 text-white" (click)="cancelEditionClicked()" >
+                              <mat-icon>exit_to_app</mat-icon>
+                              {{'buttons.cancel' | translate}}
+                            </button>
+                            <button mat-raised-button color="warn" class="text-white" >
+                              <mat-icon>save</mat-icon>
+                              {{'buttons.save' | translate}}
+                            </button>
+                        </div>
+                      
+                      </div>
+                    
+                    </form>
+              </div>
+            </div>
+            
+          </div>
+  </div>
+</div>
